@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView, Variants } from 'framer-motion';
 import {
   FaHandHoldingWater,
   FaHeartbeat,
@@ -59,7 +59,7 @@ const AboutBloodDonation = () => {
 
   
 
-const cardVariants = {
+const cardVariants: Variants = { // <-- Notice the : Variants here
   hidden: { opacity: 0, y: 50, scale: 0.9 },
   visible: (i: number) => ({
     opacity: 1,
@@ -72,7 +72,7 @@ const cardVariants = {
       stiffness: 100,
     },
   }),
-} as const; // <-- Add this here
+}; // <-- The "as const" is removed // <-- Add this here
 
   return (
     <section ref={ref} className="bg-gray-50 py-20 px-4">
